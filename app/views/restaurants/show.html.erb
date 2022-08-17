@@ -1,2 +1,8 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h1><%= @restaurant.name %></h1>
+<% @restaurant.reviews.each do |review| %>
+<%= link_to "go to review", restaurant_review_path(review) %>
+rating: <%= review.rating %> <br>
+review: <%= review.content %>
+<% end %>
+<br><button class="btn btn-dark"><%= link_to "add review!", new_restaurant_review_path(@restaurant) %></button>
+<br><button class="btn btn-dark"><%= link_to "Back to all Restaurants", restaurants_path(@restaurant) %></button>
