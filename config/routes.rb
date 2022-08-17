@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   # get "restaurants", to: "restaurants#index"
   # get "restaurants/:id", to: "restaurant#show"
-  resources :restaurants
+  resources :restaurants do
+    resources :reviews
+  end
 end
